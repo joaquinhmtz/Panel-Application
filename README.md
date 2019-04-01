@@ -6,7 +6,7 @@ Abrir terminal, ir al fichero en el que clonará el repo; y pegar el siguiente c
 
 ```sh
 cd /path
-git clone https://github.com/joaquinhmtz/Basic_Structure_AngularJS.git
+git clone https://github.com/joaquinhmtz/Panel-Application.git
 ```
 ## Instalación de dependencias
 
@@ -14,10 +14,10 @@ Para instalar las dependecias de AngularJS y NodeJS, ubicarse en el directorio d
 Windows, macOS y Linux: 
 
  ```sh
- cd /path/MEAN
+ cd /path/Panel-Application
  npm install
  
- cd /path/MEAN/public
+ cd /path/Panel-Application/public
  npm install
  ```
  
