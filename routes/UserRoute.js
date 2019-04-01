@@ -4,6 +4,8 @@ module.exports = function (app, router) {
 
 	var UserModel = require('../models/UserModel.js');
 	var bcrypt = require('bcrypt');
+	var jwt = require('jsonwebtoken');
+	var secret = process.env.SECRET;
 
 	app.post('/api/user/create', createUser);
 	app.post('/api/user/login', login);
@@ -31,8 +33,14 @@ module.exports = function (app, router) {
 			} else {
 				bcrypt.compare(req.body.password, user.password, function(err, valid) {
     				if (valid) {
-    					delete user.password;
-    					res.status(201).send(user);
+    					var obj = {
+    						_id : user._id,
+    						fullname : user.fullname,
+    						email : user.email,
+    						profile : user.profile
+    					};
+    					var token = jwt.sign({obj}, secret, {expiresIn : 20});
+    					res.status(201).send({user: obj, token: token});
     				}
 				});
 			}

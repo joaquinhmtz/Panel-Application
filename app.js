@@ -4,6 +4,8 @@ var mongoose = require('mongoose');
 var cors = require('cors');
 var bodyParser = require('body-parser');
 var helmet = require('helmet');
+var port = process.env.PORT || 3005;
+require('dotenv').config()
 
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
@@ -18,6 +20,6 @@ mongoose.connect('mongodb://localhost/panel', { useNewUrlParser: true }, functio
 
 require('./routes/UserRoute.js')(app);
 
-app.listen(3005, function () {
-    console.log('Servidor corriendo en http://localhost:3005' );
+app.listen(port, function () {
+    console.log('Servidor corriendo en http://localhost:' + port);
 });
