@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html data-ng-app="app">
+
+<head>
+	<title>Panel</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/login-register-lock.css" rel="stylesheet">
+	<link rel="stylesheet" href="app/modules/access/login/login.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+
+<body class="fix-header card-no-border fix-sidebar">
+	<!-- ============================================================== -->
+	<!-- Preloader - style you can find in spinners.css -->
+	<!-- ============================================================== -->
+
+<div ui-view></div>
+
+
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+
+<!-- LIBRERÍAS INSTALADAS -->
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="node_modules/angular/angular.js"></script>
+<script src="node_modules/angular-route/angular-route.min.js"></script>
+<script src="node_modules/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+<script src="node_modules/oclazyload/dist/ocLazyLoad.min.js"></script>
+<script src="node_modules/jquery/jquery.min.js"></script>
+
+<!-- ARCHIVOS DEL PROYECTO -->
+<script src="app/modules/access/access.module.js"></script>
+<script src="app/app.module.js"></script>
+<script src="app/app.services.js"></script>
+<script src="app/services/UserServices.js"></script>
+<script src="app/app.controller.js"></script>
+
+</body>
+
+</html>
