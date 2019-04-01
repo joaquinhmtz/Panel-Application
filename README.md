@@ -1,5 +1,4 @@
 # Panel-Application
-Esta es la estructura base para empezar un proyecto en MEAN.
 
 ## Clonar repositorio
 
