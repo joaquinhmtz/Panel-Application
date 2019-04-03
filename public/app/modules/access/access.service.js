@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.access')
+        .module('access')
         .service('AccessService', AccessService);
 
     AccessService.$inject = ['AppService'];

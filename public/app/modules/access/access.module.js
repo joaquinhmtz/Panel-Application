@@ -1,16 +1,15 @@
 (() => {
     angular
-        .module('app.access', [ 'oc.lazyLoad','ui.router',])
+        .module('access', [])
         .config(routeConfig);
 
-    routeConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
+    routeConfig.$inject = ['$stateProvider'];
 
-    function routeConfig($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.otherwise('/access');
+    function routeConfig($stateProvider) {
         $stateProvider
-            .state({
-                name: 'app.access',
+            .state('access',{
                 url: '/access',
+                template : '<div ui-view></div>',
                 resolve: {
                     deps: ['$ocLazyLoad', function($ocLazyLoad) {
                         return $ocLazyLoad.load([
@@ -19,23 +18,20 @@
                     }]
                 }
             })
-            .state({
-                name: 'app.access.login',
+            .state('access.login',{
                 url: '/login',
                 templateUrl: 'app/modules/access/login/login.html',
                 controller: 'loginController',
                 controllerAs: 'vm',
                 resolve: {
                     deps: ['$ocLazyLoad', function($ocLazyLoad) {
-                        console.log('Here perro!')
                         return $ocLazyLoad.load([
-                            'app/modules/access/access.service.js',
                             'app/modules/access/login/login.ctrl.js',
                             'app/services/UserServices.js'
                         ]);
                     }]
                 }
-            })
+            });
 
         /*
         * Por cada modulo tener un service y un module - ejemplo: access, public, admin-panel
@@ -43,3 +39,5 @@
     }
 
 })();
+
+

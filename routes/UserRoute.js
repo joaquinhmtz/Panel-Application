@@ -3,6 +3,7 @@
 module.exports = function (app, router) {
 
 	var UserModel = require('../models/UserModel.js');
+	var ProfileModel = require('../models/ProfileModel.js');
 	var bcrypt = require('bcrypt');
 	var jwt = require('jsonwebtoken');
 	var secret = process.env.SECRET;
@@ -35,12 +36,17 @@ module.exports = function (app, router) {
     				if (valid) {
     					var obj = {
     						_id : user._id,
-    						fullname : user.fullname,
-    						email : user.email,
     						profile : user.profile
     					};
     					var token = jwt.sign({obj}, secret, {expiresIn : 20});
-    					res.status(201).send({user: obj, token: token});
+    					ProfileModel.find({ _id : obj.profile._id}, function (err, response) {
+    						if (err) {
+    							res.status(401).send(err);
+    						} else {
+    							obj.profile = response;
+    							res.status(201).send({user: obj, token: token});
+    						}
+    					})
     				}
 				});
 			}

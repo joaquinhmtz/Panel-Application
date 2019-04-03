@@ -3,19 +3,18 @@
         .module('app', [
             'ui.router',
             'oc.lazyLoad',
-            'app.access'
+            'access',
+            'app.panel'
         ])
         .config(routeConfig);
 
     routeConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 
     function routeConfig($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.otherwise('/app');
-        $stateProvider.state({
-            name: 'app',
+        $urlRouterProvider.otherwise('/access/login');
+        $stateProvider.state('app',{
             url: '/app',
-            templateUrl: './app/modules/access/login/login.html',
-            //templateUrl: './app/app.html',
+            templateUrl: './app/app.html',
             controller: 'AppCtrl',
             controllerAs: 'app'
         });
