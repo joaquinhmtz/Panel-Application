@@ -25,6 +25,7 @@
 
 		function saveInLocal (item) {
 			$window.localStorage['user_panel'] = JSON.stringify(item);
+			$state.go('app.panel.dashboard');
 		}
 
 		function init () {

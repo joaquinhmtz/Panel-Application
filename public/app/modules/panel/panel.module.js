@@ -18,6 +18,17 @@
                     }]
                 }
             })
+            .state('app.panel.dashboard',{
+                url: '/dashboard',
+                templateUrl : './app/modules/panel/panel-dashboard.html',
+                resolve: {
+                    deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            'app/modules/panel/panel.service.js'
+                        ]);
+                    }]
+                }
+            })
 
         /*
         * Por cada modulo tener un service y un module - ejemplo: access, public, admin-panel
