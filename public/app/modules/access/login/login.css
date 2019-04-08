@@ -1,155 +1,94 @@
-// Set background image (pattern)
-
-*{
-  -ms-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
-html, body{
-  width: 100%;
-  height: 100%;
-  background: url(https://subtlepatterns.com/patterns/sativa.png) repeat fixed;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 200;
-}
-
-// Start styles in form
-
-.login{
-  position: relative;
-  top: 50%;
-  width: 250px;
-  display: table;
-  margin: -150px auto 0 auto;
-  background: #fff;
-  border-radius: 4px;
-}
-
-.legend{
-  position: relative;
-  width: 100%;
-  display: block;
-  background: #FF7052;
-  padding: 15px;
-  color: #fff;
-  font-size: 20px;
-  
-  &:after{
-    content: "";
-    background-image: url(http://simpleicon.com/wp-content/uploads/multy-user.png);
-    background-size: 100px 100px;
-    background-repeat: no-repeat;
-    background-position: 152px -16px;
-    opacity: 0.06;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-  }
-}
-
-.input{
-  position: relative;
-  width: 90%;
-  margin: 15px auto;
-  
-  span{
-    position: absolute;
-    display: block;
-    color: darken(#EDEDED, 10%);
-    left: 10px;
-    top: 8px;
-    font-size: 20px;
-  }
-  
-  input{
-    width: 100%;
-    padding: 10px 5px 10px 40px;
-    display: block;
-    border: 1px solid #EDEDED;
-    border-radius: 4px;
-    transition: 0.2s ease-out;
-    color: darken(#EDEDED, 30%);
-    
-    &:focus{
-      padding: 10px 5px 10px 10px;
-      outline: 0;
-      border-color: #FF7052;
-    }
-  }
-}
-
-.submit{
-  width: 45px;
-  height: 45px;
-  display: block;
-  margin: 0 auto -15px auto;
-  background: #fff;
-  border-radius: 100%;
-  border: 1px solid #FF7052;
-  color: #FF7052;
-  font-size: 24px;
-  cursor: pointer;
-  box-shadow: 0px 0px 0px 7px #fff;
-  transition: 0.2s ease-out;
-  
-  &:hover, &:focus{
-    background: #FF7052;
+  /*body {
     color: #fff;
-    outline: 0;
+    background: #d47677;
+  }*/
+  .form-control {
+        min-height: 41px;
+    background: #fff;
+    box-shadow: none !important;
+    border-color: #e3e3e3;
   }
-}
-
-.feedback{
-  position: absolute;
-  bottom: -70px;
-  width: 100%;
-  text-align: center;
-  color: #fff;
-  background: #2ecc71;
-  padding: 10px 0;
-  font-size: 12px;
-  display: none;
-  opacity: 0;
-  
-  &:before{
-    bottom: 100%;
-    left: 50%;
-    border: solid transparent;
-    content: "";
-    height: 0;
-    width: 0;
+  .form-control:focus {
+    border-color: #70c5c0;
+  }
+    .form-control, .btn {        
+        border-radius: 2px;
+    }
+  .login-form {
+    width: 350px;
+    margin: 0 auto;
+    padding: 100px 0 30px;    
+  }
+  .login-form form {
+    color: #7a7a7a;
+    border-radius: 2px;
+      margin-bottom: 15px;
+        font-size: 13px;
+        background: #ececec;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        padding: 30px;  
+        position: relative; 
+    }
+  .login-form h2 {
+    font-size: 22px;
+        margin: 35px 0 25px;
+    }
+  .login-form .avatar {
     position: absolute;
-    pointer-events: none;
-    border-color: rgba(46, 204, 113, 0);
-    border-bottom-color: #2ecc71;
-    border-width: 10px;
-    margin-left: -10px;
-    
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: -50px;
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    z-index: 9;
+    background: #70c5c0;
+    padding: 15px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
   }
-}
-
-.text-family {
-  font-family: 'Raleway', sans-serif;
-}
-
-.button-login {
-  background-color: #EB7805;
-  color: white;
-  border-radius: 25px;
-  width: 70%;
-  margin: auto;
-  margin-top: 40px;
-}
-
-.button-login:hover {
-  opacity: 1;
-}
+  .login-form .avatar img {
+    width: 100%;
+  } 
+    .login-form input[type="checkbox"] {
+        margin-top: 2px;
+    }
+    .login-form .btn {        
+        font-size: 16px;
+        font-weight: bold;
+    background: #70c5c0;
+    border: none;
+    margin-bottom: 20px;
+    }
+  .login-form .btn:hover, .login-form .btn:focus {
+    background: #50b8b3;
+        outline: none !important;
+  }    
+  .login-form a {
+    color: #fff;
+    text-decoration: underline;
+  }
+  .login-form a:hover {
+    text-decoration: none;
+  }
+  .login-form form a {
+    color: #7a7a7a;
+    text-decoration: none;
+  }
+  .login-form form a:hover {
+    text-decoration: underline;
+  }
+  
+  /*Alertas*/
+  .swal-wide{
+    width: 550px !important;
+    height: 380px !important;
+  }
+  .swal2-popup #swal2-content {
+    font-size: 27px;
+  }
+  .swal2-popup .swal2-header {
+    font-size: 17px;
+  }
 
 

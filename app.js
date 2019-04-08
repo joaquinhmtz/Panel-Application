@@ -19,6 +19,7 @@ mongoose.connect('mongodb://localhost/panel', { useNewUrlParser: true }, functio
 });
 
 require('./routes/UserRoute.js')(app);
+require('./routes/ProfileRoute.js')(app);
 
 app.listen(port, function () {
     console.log('Servidor corriendo en http://localhost:' + port);

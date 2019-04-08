@@ -14,7 +14,12 @@
         start();
 
         function start() {
-            console.log('Hey! Im the main controller')
+            console.log('Hey! Im the main controller');
+            $( document ).ready(function() {
+                $(window).resize(function(){
+                    $(window).width()    
+              });
+            });
         }
     }
 })();

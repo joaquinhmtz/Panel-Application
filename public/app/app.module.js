@@ -4,7 +4,8 @@
             'ui.router',
             'oc.lazyLoad',
             'access',
-            'app.panel'
+            'app.panel',
+            'ui.bootstrap'
         ])
         .config(routeConfig);
 

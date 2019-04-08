@@ -1,0 +1,108 @@
+<!-- <div class="content-wrapper"> -->
+	<section class="content-header">
+		<h1>
+			Lista de usuario
+		</h1>
+		<ol class="breadcrumb">
+			<li><a href="#"><i class="fa fa-dashboard"></i> Usuarios</a></li>
+			<li class="active">Listado</li>
+		</ol> 
+	</section>
+
+	<section class="content" style="min-height: 229px">
+		<div class="row">
+			<div class="col-md-12">
+
+				<div class="box box-success">
+					<div class="box-header with-border">
+						<h3 class="box-title">Parámetros de búsqueda</h3>
+					</div>
+					<form role="form" ng-submit="vm.save()">
+						<div class="box-body">
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group" ng-class="{'has-error': vm.flags.save && vm.flags.name}">
+										<label for="exampleInputEmail1">Nombre completo</label>
+										<div class="input-group">
+											<input type="text" class="form-control" id="" placeholder="Nombre de usuario" ng-model="vm.filters.fullname">
+											<span class="input-group-btn">
+												<button class="btn btn-default" type="button" style="padding: 9px 12px;">
+													<i class="fa fa-eraser"></i>
+												</button>
+											</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group" ng-class="{'has-error': vm.flags.save && vm.flags.name}">
+										<label for="exampleInputEmail1">Email</label>
+										<div class="input-group">
+											<input type="email" class="form-control" id="" placeholder="Email de usuario" ng-model="vm.filters.email">
+											<span class="input-group-btn">
+												<button class="btn btn-default" type="button" style="padding: 9px 12px;">
+													<i class="fa fa-eraser"></i>
+												</button>
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-8"></div>
+								<div class="col-md-4" style="padding-top: -10px;">
+									<button type="submit" class="btn btn-primary" style="float: right; background-color: #4caf50; border-color: #4caf50"><i class="fa fa-search"></i> Buscar</button>
+									<button type="submit" class="btn btn-default" style="float: right; margin-right: 15px;"><i class="fa fa-eraser"></i> Limpiar filtros</button>
+								</div>
+							</div>
+						</div>
+
+					</form>
+				</div>
+
+
+			</div>
+
+		</div>
+	</section>
+
+	<section class="content" style="padding-top: 0px;">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="box">
+					<div class="box-header with-border">
+						<h3 class="box-title">Listado de usuarios</h3>
+					</div>
+					<!-- /.box-header -->
+					<div class="box-body">
+						<table class="table table-bordered">
+							<tr>
+								<th style="width: 10px">#</th>
+								<th>Nombre completo</th>
+								<th>Email</th>
+								<th>Perfil</th>
+								<th>Acciones</th>
+							</tr>
+							<tr ng-repeat="row in vm.users track by $index" st-select-row="row">
+								<td class="text-muted"><span class="badge bg-black">{{vm.getIndex($index + 1)}}</span></td>
+								<td>{{row.fullname}}</td>
+								<td>{{row.email}}</td>
+								<td>{{row.profile._id}}</td>
+								<td style="text-align: center">
+									<span data-toggle="tooltip" title="Editar usuario" ng-click="vm.details(row)" style="color: Dodgerblue; cursor: pointer">
+										<i class="fa fa-edit fa-lg"></i>
+									</span>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<!-- /.box-body -->
+					<div class="box-footer clearfix">
+						 <pagination total-items="list.length" items-per-page="pageSize" ng-model="currentPage" max-size="5" class="pagination-sm"></pagination>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- </section> -->
+<!-- </div> -->
