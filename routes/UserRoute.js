@@ -6,7 +6,8 @@ module.exports = function (app, router) {
 	var ProfileModel = require('../models/ProfileModel.js');
 	var bcrypt = require('bcrypt');
 	var jwt = require('jsonwebtoken');
-	var secret = process.env.SECRET;
+	//var secret = process.env.SECRET;
+	var secret = '123456';
 	var async = require('async');
 
 	app.post('/api/user/create', createUser);
