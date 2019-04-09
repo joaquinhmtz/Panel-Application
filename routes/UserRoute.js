@@ -12,7 +12,7 @@ module.exports = function (app, router) {
 	app.post('/api/user/create', createUser);
 	app.post('/api/user/login', login);
 	app.post('/api/user/all', getUsers);
-	app.put('/api/user/update', updateUser);
+	//app.put('/api/user/update', updateUser);
 
 	function createUser (req, res, next) {
 		var data = req.body;
