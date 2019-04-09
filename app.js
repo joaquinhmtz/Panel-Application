@@ -5,7 +5,7 @@ var cors = require('cors');
 var bodyParser = require('body-parser');
 var helmet = require('helmet');
 //var port = process.env.PORT || 3005;
-var port = 80;
+var port = 3005;
 require('dotenv').config();
 
 app.use(express.static(__dirname + '/public'));
