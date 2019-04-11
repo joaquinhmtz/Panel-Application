@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 var helmet = require('helmet');
 //var port = process.env.PORT || 3005;
 var port = 3005;
-var ip = '170.150.162.121';
+var ip = '170.150.162.121:27017';
 require('dotenv').config();
 
 app.use(express.static(__dirname + '/public'));
