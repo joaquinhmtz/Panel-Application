@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 var helmet = require('helmet');
 //var port = process.env.PORT || 3005;
 var port = 3005;
+var ip = '170.150.162.121';
 require('dotenv').config();
 
 app.use(express.static(__dirname + '/public'));
@@ -14,7 +15,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors());
 app.use(helmet());
 
-mongoose.connect('mongodb://localhost/panel', { useNewUrlParser: true }, function (err) {
+mongoose.connect('mongodb://' + ip + '/panel', { useNewUrlParser: true }, function (err) {
     if (err) return console.log('Error al conectarse a la base', err);
     console.log('Conexión a la base exitosa');
 });
